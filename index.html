@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes petalsFall {
+      0% { transform: translateY(-10%); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    body {
+
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #4b2e2e;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 20px;
+      background-image: url('https://www.transparenttextures.com/patterns/sakura.png');
+      animation: fadeInUp 1.5s ease;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #d6336c;
+      text-shadow: 1px 1px #fff;
+      animation: fadeInUp 2s ease;
+    }
+
+    .section {
+      background: #fffafa;
+      border: 2px solid #ffc0cb;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .highlight {
+      background-color: #ffe6ea;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      margin-top: 50px;
+      animation: fadeInUp 2.5s ease;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .photo-gallery div {
+      background: #fff;
+      border: 1px solid #ffc0cb;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .photo-gallery img {
+      width: 70%;
+      border-radius: 10px;
+    }
+
+    .music-section {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.8s ease;
+    }
+
+    .button-play {
+      background-color: #ff99cc;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      animation: fadeInUp 2s ease;
+    }
+
+    .button-play:hover {
+      background-color: #ff66aa;
+    }
+
+    .photo-section {
+      margin-top: 40px;
+    }
+
+    /* Petal animation */
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      animation: petalsFall 10s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <h1>GOOD NIGHT MELYNDAAA</h1>
+  <h2></h2>
+  <div class="music-section">
+    <h3>🎶 lagu</h3>
+    <audio id="bg-music" loop>
+      <source src="lagu.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio. Coba pakai browser lain ya!
+    </audio>
+    <button class="button-play" onclick="document.getElementById('bg-music').play()">Putar Musik</button>
+  </div>
+  
+
+  <div class="section">
+    <h3></h3>
+    <p class="highlight">
+      semangat meetingnya. aku percaya kamu pasti bisa jalanin dengan baik. Jangan lupa tarik napas, fokus, dan
+      kasi senyum manis kamu. kamu ngga perlu khawatir, karena aku yakin kamu bisa melewati semuanya dengan
+      baik. ingat, kamu ngga sendirian, masi ada aku di sini ahaha, yanggg selalu dukung kamu dan kirim doa terbaik 
+      biar meeting kamu sukses. semangat terus yaaaaa
+  </div>
+  <!-- Love jatuh -->
+  <script>
+    for(let i = 0; i < 20; i++) {
+      let petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      petal.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
